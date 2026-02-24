@@ -35,6 +35,12 @@ test('ลูกค้าเข้าสู่ระบบ หาสินค้�
     });
 
     await test.step('เข้าหน้า Checkout และตรวจสอบข้อมูล Order', async () => {
+        await page.locator('#shopping-cart-checkout-btn').click();
+        await expect(page.locator('#product-1-name')).toHaveText('Balance Training Bicycle');
+        await expect(page.locator('#product-1-price')).toHaveText('฿12,943.80');
+        await expect(page.locator('#product-1-point')).toHaveText('129 Points');
+        await expect(page.locator('#product-1-quantity-input')).toHaveValue('3');
+
 
     });
 });
