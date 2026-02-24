@@ -41,6 +41,14 @@ test('ลูกค้าเข้าสู่ระบบ หาสินค้�
         await expect(page.locator('#product-1-point')).toHaveText('129 Points');
         await expect(page.locator('#product-1-quantity-input')).toHaveValue('3');
 
+    });
 
+    await test.step('กรอกข้อมูลการจัดส่ง และชำระเงิน', async () => {
+        await page.locator('#shipping-form-first-name-input').fill('Matichai');
+        await page.locator('#shipping-form-last-name-input').fill('Duangjit');
+        await page.locator('#shipping-form-address-input').fill('123 หมู่ 6, ถนนสุขุมวิท');
+        await page.locator('#shipping-form-province-select').selectOption('กรุงเทพมหานคร');   
+        await page.locator('#shipping-form-district-select').selectOption('เขตบางนา'); 
+        await page.locator('#shipping-form-sub-district-select').selectOption('บางนา');
     });
 });
