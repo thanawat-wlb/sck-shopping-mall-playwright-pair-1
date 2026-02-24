@@ -13,7 +13,7 @@ test('ลูกค้าเข้าสู่ระบบ หาสินค้�
         await page.locator('#search-product-input').fill('bicycle');
         await page.keyboard.press('Enter');
         await expect(page.locator('#product-card-name-1')).toHaveText('Balance Training Bicycle');
-        await expect(page.locator('#product-card-price-1')).toHaveText('฿4,314.60');5
+        await expect(page.locator('#product-card-price-1')).toHaveText('฿4,314.60');
     });
 
     await test.step('เข้าดู และตรวจสอบข้อมูลรายละเอียดสินค้า', async () => {
@@ -30,5 +30,11 @@ test('ลูกค้าเข้าสู่ระบบ หาสินค้�
         await page.locator('#header-menu-cart-btn').click();
         await expect(page.locator('#product-1-name')).toHaveText('Balance Training Bicycle');
         await expect(page.locator('#product-1-price')).toHaveText('฿12,943.80');
+        await expect(page.locator('#product-1-point')).toHaveText('129 Points');
+        await expect(page.locator('#shopping-cart-subtotal-price')).toHaveText('฿12,943.79');
+    });
+
+    await test.step('เข้าหน้า Checkout และตรวจสอบข้อมูล Order', async () => {
+
     });
 });
