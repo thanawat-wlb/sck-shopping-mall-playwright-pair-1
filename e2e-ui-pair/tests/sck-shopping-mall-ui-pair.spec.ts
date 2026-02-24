@@ -1,0 +1,9 @@
+import { test, expect } from '@playwright/test';
+
+test('ลูกค้าซื้อสินค้าในเว็บไซต์ SCK-Shopping Mall สำเร็จ', async ({ page }) => {
+    
+    await test.step('ลูกค้าเข้าสู่ระบบ', async () => {
+    // 'user_6', 'P@ssw0rd'
+    
+    });
+});
